@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer utilities {
+  @media print {
+    body * {
+      visibility: hidden;
+    }
+    .printable-document,
+    .printable-document * {
+      visibility: visible;
+    }
+    .printable-document {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 20mm !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    @page {
+      size: letter;
+      margin: 15mm;
+    }
+  }
+}
